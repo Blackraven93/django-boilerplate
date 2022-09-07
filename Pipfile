@@ -5,6 +5,11 @@ name = "pypi"
 
 [packages]
 requests = "*"
+django = "*"
+pip = "*"
+pytz = "*"
+setuptools = "*"
+sqlparse = "*"
 
 [dev-packages]
 pytest = "*"
