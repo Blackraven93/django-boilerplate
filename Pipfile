@@ -10,6 +10,7 @@ pip = "*"
 pytz = "*"
 setuptools = "*"
 sqlparse = "*"
+pillow = "*"
 
 [dev-packages]
 pytest = "*"

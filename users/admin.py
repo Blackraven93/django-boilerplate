@@ -11,23 +11,22 @@ class CustomUserAdmin(UserAdmin):
         (
             "Profile",
             {
-                "fields": ("username", "password", "name", "email", "is_host"),
+                "fields": ("username", "password", "name", "email", "is_host", "avatar", "gender",
+                           "language"),
             },
         ),
         ("Permissions",
-        {
-            "fields": (
-                "is_active",
-                "is_staff",
-                "is_superuser",
-                "groups",
-                "user_permissions",
-                ),
-            },
-        ),
+         {
+             "fields": (
+                 "is_active",
+                 "is_staff",
+                 "is_superuser",
+                 "groups",
+                 "user_permissions",
+             ),
+         },
+         ),
         (("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
 
     list_display = ("username", "email", "name", "is_host")
-
-
