@@ -1,7 +1,8 @@
 from django.db import models
+from common.models import CommonModel
 
 
-class Board(models.Model):
+class Board(CommonModel):
     class BoardCategoryChoices(models.TextChoices):
         DEVELOPMENT = ("dev", "Development")
         DESIGN = ('design', "Design")
@@ -9,13 +10,13 @@ class Board(models.Model):
         CULTURE = ('Culture', 'culture')
 
     """Board Model"""
-    title = models.CharField(max_length=140)
+    board_title = models.CharField(max_length=140)
     author = models.ForeignKey("users.User", on_delete=models.CASCADE)
     description = models.TextField(max_length=140)
     category = models.CharField(max_length=20, choices=BoardCategoryChoices.choices)
     tags = models.CharField()
-    date = models.DateTimeField()
-    createdAt = models.DateTimeField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
     private = models.BooleanField(default=False)
 
     def __str__(self):

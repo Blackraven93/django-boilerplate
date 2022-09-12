@@ -33,7 +33,8 @@ ALLOWED_HOSTS = []
 CUSTOM_APPS = [
     'boards.apps.BoardsConfig',
     'users.apps.UsersConfig',
-    'books.apps.BooksConfig'
+    'books.apps.BooksConfig',
+    'common.apps.CommonConfig'
 ]
 
 SYSTEM_APPS = [
