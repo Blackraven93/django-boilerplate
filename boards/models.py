@@ -14,9 +14,7 @@ class Board(CommonModel):
     author = models.ForeignKey("users.User", on_delete=models.CASCADE)
     description = models.TextField(max_length=140)
     category = models.CharField(max_length=20, choices=BoardCategoryChoices.choices)
-    tags = models.CharField()
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    tags = models.CharField(max_length=120)
     private = models.BooleanField(default=False)
 
     def __str__(self):
