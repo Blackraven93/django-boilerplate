@@ -13,13 +13,18 @@ class BookAdmin(admin.ModelAdmin):
         "category",
         "private",
         "description",
-        "created_at",
-        "updated_at"
     )
+
     list_filter = (
         "book_title",
         "publisher",
         "category",
         "private",
     )
+
+    readonly_fields = (
+        "created_at",
+        "updated_at"
+    )
+
     search_fields = ("book_title",)

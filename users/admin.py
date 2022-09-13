@@ -26,7 +26,7 @@ class CustomUserAdmin(UserAdmin):
              ),
          },
          ),
-        (("Important dates"), {"fields": ("last_login", "date_joined")}),
+        ("Important dates", {"fields": ("last_login", "date_joined")}),
     )
 
     list_display = ("username", "email", "name", "is_host")

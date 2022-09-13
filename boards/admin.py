@@ -10,5 +10,12 @@ class BoardAdmin(admin.ModelAdmin):
         "author",
         "description",
     )
-    # list_filter = []
+    list_filter = (
+        "board_title",
+        "author"
+    )
+    readonly_fields = (
+        "created_at",
+        "updated_at"
+    )
     search_fields = ("author",)
