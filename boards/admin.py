@@ -6,7 +6,7 @@ from .models import Board
 class BoardAdmin(admin.ModelAdmin):
 
     list_display = (
-        "title",
+        "board_title",
         "author",
         "description",
     )
