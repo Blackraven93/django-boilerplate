@@ -14,7 +14,7 @@ class BookCategory(CommonModel):
     kind = models.CharField(max_length=3, choices=BookCategoryKindChoices.choices)
 
     def __str__(self):
-        return self.name
+        return f"{self.kind}: {self.name}"
 
 
 class BoardCategory(CommonModel):
@@ -28,4 +28,5 @@ class BoardCategory(CommonModel):
     kind = models.CharField(max_length=3, choices=BoardCategoryKindChoices.choices)
 
     def __str__(self):
-        return self.name
+        return f"{self.kind}: {self.name}"
+
