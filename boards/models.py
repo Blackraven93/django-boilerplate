@@ -3,17 +3,12 @@ from common.models import CommonModel
 
 
 class Board(CommonModel):
-    class BoardCategoryChoices(models.TextChoices):
-        DEVELOPMENT = ("dev", "Development")
-        DESIGN = ('design', "Design")
-        PROJECT_MANAGING = ('PM', 'project manage')
-        CULTURE = ('Culture', 'culture')
 
     """Board Model"""
     board_title = models.CharField(max_length=140)
     author = models.ForeignKey("users.User", on_delete=models.CASCADE)
     description = models.TextField(max_length=140)
-    category = models.CharField(max_length=20, choices=BoardCategoryChoices.choices)
+    category = models.ForeignKey("categories.BoardCategory", null=True, blank=True, on_delete=models.SET_NULL)
     tags = models.CharField(max_length=120)
     private = models.BooleanField(default=False)
 

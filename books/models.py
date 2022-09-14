@@ -4,15 +4,11 @@ from common.models import CommonModel
 
 # Create your models here.
 class Book(CommonModel):
-    class BookCategoryChoices(models.TextChoices):
-        IT = ("dev", "Development")
-        DESIGN = ('design', "Design")
-        BUSINESS = ('PM', 'project manage')
 
     """Book Model"""
     book_title = models.CharField(max_length=140, default="")
     publisher = models.CharField(max_length=15)
-    category = models.CharField(max_length=20, choices=BookCategoryChoices.choices)
+    category = models.ForeignKey("categories.BookCategory", null=True, blank=True, on_delete=models.SET_NULL)
     private = models.BooleanField(default=False)
     description = models.TextField(max_length=140, null=True, blank=True)
 
