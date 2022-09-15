@@ -11,7 +11,7 @@ class BookCategory(CommonModel):
         BUSINESS = ('PM', 'project manage')
 
     name = models.CharField(max_length=40)
-    kind = models.CharField(max_length=3, choices=BookCategoryKindChoices.choices)
+    kind = models.CharField(max_length=15, choices=BookCategoryKindChoices.choices)
 
     def __str__(self):
         return f"{self.kind}: {self.name}"
@@ -25,7 +25,7 @@ class BoardCategory(CommonModel):
         CULTURE = ('Culture', 'culture')
 
     name = models.CharField(max_length=40)
-    kind = models.CharField(max_length=3, choices=BoardCategoryKindChoices.choices)
+    kind = models.CharField(max_length=15, choices=BoardCategoryKindChoices.choices)
 
     def __str__(self):
         return f"{self.kind}: {self.name}"

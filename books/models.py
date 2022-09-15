@@ -11,6 +11,7 @@ class Book(CommonModel):
     category = models.ForeignKey("categories.BookCategory", null=True, blank=True, on_delete=models.SET_NULL)
     private = models.BooleanField(default=False)
     description = models.TextField(max_length=140, null=True, blank=True)
+    view = models.IntegerField(null=True)
 
     def __str__(self):
         return self.book_title

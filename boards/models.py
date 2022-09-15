@@ -11,6 +11,7 @@ class Board(CommonModel):
     category = models.ForeignKey("categories.BoardCategory", null=True, blank=True, on_delete=models.SET_NULL)
     tags = models.CharField(max_length=120)
     private = models.BooleanField(default=False)
+    view = models.IntegerField(null=True)
 
     def __str__(self):
         return self.board_title
