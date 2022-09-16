@@ -15,3 +15,7 @@ class Board(CommonModel):
 
     def __str__(self):
         return self.board_title
+
+    def total_category(self):
+        return self.category.count()
+
