@@ -8,3 +8,4 @@ class ReviewAdmin(admin.ModelAdmin):
     list_display = (
         "__str__",
     )
+

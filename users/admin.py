@@ -30,3 +30,9 @@ class CustomUserAdmin(UserAdmin):
     )
 
     list_display = ("username", "email", "name", "is_host")
+    search_fields = (
+        "username",
+        "language",
+        "gender",
+        "is_host"
+    )

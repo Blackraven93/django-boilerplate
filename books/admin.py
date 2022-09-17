@@ -27,4 +27,8 @@ class BookAdmin(admin.ModelAdmin):
         "updated_at"
     )
 
-    search_fields = ("book_title",)
+    search_fields = (
+        "book_title",
+        "category",
+        "publisher"
+    )

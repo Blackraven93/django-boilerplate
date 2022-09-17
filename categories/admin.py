@@ -21,4 +21,4 @@ class BoardCategoryAdmin(admin.ModelAdmin):
     )
 
     list_filter = ("kind", )
-
+    search_fields = ("name",)

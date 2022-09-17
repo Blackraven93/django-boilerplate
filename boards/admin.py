@@ -18,4 +18,8 @@ class BoardAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at"
     )
-    search_fields = ("author",)
+    search_fields = (
+        "^board_title",
+        "^author",
+        '=author__name'
+    )
