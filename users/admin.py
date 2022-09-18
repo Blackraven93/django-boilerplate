@@ -4,9 +4,14 @@ from .models import User
 
 
 # Register your models here.
+@admin.action(description="Init host permission")
+def init_host(model_admin, requests, users):
+    users.update(is_host=False)
+
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
+    actions = (init_host,)
     fieldsets = (
         (
             "Profile",
@@ -29,7 +34,7 @@ class CustomUserAdmin(UserAdmin):
         ("Important dates", {"fields": ("last_login", "date_joined")}),
     )
 
-    list_display = ("username", "email", "name", "is_host")
+    list_display = ("username", "email", "name", "is_host", 'gender')
     search_fields = (
         "username",
         "language",

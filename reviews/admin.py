@@ -8,4 +8,6 @@ class ReviewAdmin(admin.ModelAdmin):
     list_display = (
         "__str__",
     )
-
+    list_filter = (
+        'user__is_host',
+    )
