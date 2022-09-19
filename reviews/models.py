@@ -4,12 +4,13 @@ from common.models import CommonModel
 
 # Create your models here.
 class Review(CommonModel):
-    user = models.ForeignKey("users.User", on_delete=models.CASCADE)
+    user = models.ForeignKey("users.User", on_delete=models.CASCADE, related_name='users')
     board = models.ForeignKey(
         "boards.Board",
         on_delete=models.CASCADE,
         null=True,
-        blank=True
+        blank=True,
+        related_name='boards'
     )
     description = models.CharField(max_length=320)
 

@@ -2,9 +2,13 @@ from django.contrib import admin
 from .models import Board
 
 
+@admin.action(description="set all board private")
+def set_all_private(model_admin, requests, boards):
+    boards.update(private=True)
+
+
 @admin.register(Board)
 class BoardAdmin(admin.ModelAdmin):
-
     list_display = (
         "board_title",
         "author",

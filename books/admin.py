@@ -4,9 +4,13 @@ from django.contrib import admin
 from .models import Book
 
 
+@admin.action(description="set all book private")
+def set_all_private(model_admin, requests, books):
+    books.update(private=True)
+
+
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-
     list_display = (
         "book_title",
         "publisher",
